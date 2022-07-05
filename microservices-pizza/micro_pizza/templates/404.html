@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href={% static 'images/favicon.ico' %}>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/404.css' %}">
+    <title>Microservices | Error 404</title>
+
+</head>
+<body>
+
+    <div class="container">
+      <h2>Oops! Page not found.</h2>
+      <h1>404</h1>
+      <p>We can't find the content you're looking for.</p>
+      <a href="{% url 'index' %}">Go back home</a>
+    </div>
+</body>
+</html>

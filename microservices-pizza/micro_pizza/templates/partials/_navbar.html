@@ -1,0 +1,24 @@
+  {% load static %}
+
+          <header>
+
+            <h1 class="logo"><a href="{% url 'home' %}">Tizza</a></h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <nav>
+              <ul>
+                   {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">Dashboard</a></li>
+                <li><a href="{% url 'index' %}">Pizzas</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'logout' %}">Log out</a></li>
+                  {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                       <li><a href="{% url 'register' %}">Register</a></li>
+                   {% endif %}
+              </ul>
+            </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+              <span></span>
+            </label>
+          </header>

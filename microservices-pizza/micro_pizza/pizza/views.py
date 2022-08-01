@@ -51,14 +51,6 @@ def listing(request,pid):
     return render(request, '404.html')
 
 
-# @method_decorator(login_required, name='dispatch')
-# class GetTenPizzasView(View, NeverCacheMixin, LoginRequiredMixin):
-#     template_name = 'pizza/ten_pizzas.html'
-#
-#     def get(self, request):
-#         pizzas = Pizza.objects.order_by('?')[:10]
-#         return render(request, self.template_name, {'pizzas': pizzas})
-
 @login_required(redirect_field_name=None)
 @cache_control(max_age=0, no_cache=True, no_store=True, must_revalidate=True)
 def gettenpizza(request):

@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django.contrib.sessions.backends.signed_cookies'
             ],
         },
     },
@@ -163,3 +164,8 @@ SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 0
 
 
 SESSION_TIMEOUT_REDIRECT = 'login'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE':5
+}
